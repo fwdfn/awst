@@ -1,0 +1,5 @@
+D:\作业\艾维斯特(自己的)\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\作业\艾维斯特(自己的)\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\作业\艾维斯特(自己的)\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\作业\艾维斯特(自己的)\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\作业\艾维斯特(自己的)\ClassLibrary\obj\Debug\ClassLibrary.pdb

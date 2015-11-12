@@ -1,0 +1,265 @@
+﻿body {
+    margin:0 auto;
+    padding:0;
+}
+* {
+    margin:0;
+    padding:0;
+}
+a {
+   text-decoration:none;
+}
+ul {
+    list-style:none;
+}
+img {
+    border:0;
+}
+#bg_index {
+    width:100%;    
+    /*height:500px;*/
+}
+    
+/*头部样式*/
+#bg_index_top {
+    width:100%;
+    height:56px;
+    background:url(../images/bg_index_topBg.jpg) repeat-x;
+    color:white;
+}
+    #bg_index_top label {
+        display:block;
+        padding-top:15px;
+        float:left;
+        font-size:15px;
+    }
+    #bg_index_top #currentTime {
+        padding-left:20px;
+    }
+#welcomLab {
+    margin-left:300px;
+}
+#bg_exitBtn {
+    background:url(../images/bg_exitBtn.jpg);
+    width:44px;
+    height:20px;
+    border:0;
+    float:right;
+    margin-right:10px;
+    margin-top:10px;    
+}
+/*中间样式*/
+/*中间左边*/
+#bg_index_other {    
+    margin-top:7px;
+    width:100%;
+    height:640px;        
+}
+#bg_index_left {    
+    float:left;
+    width:182px;  
+    height:500px;
+    text-align:center;          
+}
+#bg_index_left h4{
+    width:182px;
+    height:30px;    
+    background:url(../images/bg_index_left_bgTu1.jpg);
+    line-height:30px;
+    cursor:pointer;
+}
+    #bg_index_left .imgDiv {
+        width:182px;
+        height:4px;
+        background:url(../images/bg_index_left_bgTu2.jpg);
+    }
+    #bg_index_left ul li {
+        height:25px;
+        width:180px;
+        border:1px solid #c9d0d7;
+        background:#f0f3f5;
+        line-height:25px;
+    }
+        #bg_index_left ul li:hover {
+        background:red;
+        }
+/*中间右边样式*/  
+/*右边总体样式*/      
+#bg_index_right {
+    float:left;    
+    height:650px;    
+    margin-left:15px;
+}
+
+/*框架样式*/
+#bg_index_right_top {
+    background:url(../images/bg_index_right_topBg1.gif) repeat-x;
+    height:29px;
+    width:100%;
+    line-height:29px;
+    font-size:11px;
+    text-indent:10px;
+}
+.bgLeft {
+    float:left;
+}
+.bgRight {
+    float:right;
+}
+#iframe {                /*如果不设置宽高的话系统会有一个默认的宽高，这显然不是我们想要的*/
+     /*height:660px;*/       /*高度也需要调整*/
+     width:805px;       /*初始宽度怎样设置,此处需要修改*/          
+     border:0;
+     
+}
+/*iframe分为三大块 title bodyTop bodyBottom*/
+#title {
+    width:100%;
+    height:29px;
+    background:url(../images/bg_index_right_topBg1.gif);
+    line-height:29px;
+    font-weight:bold;
+    text-indent:15px;
+}
+#bodyTop {
+   /*height:640px;*/    /*怎样让高度变成自动变化*/
+    width:100%;    
+}
+#bodyTopLeft {
+    float:left;
+    width:6px;
+    /*height:640px;*/    /*此数字有待修改*/
+    background:url(../images/ifrLeft.gif) repeat-y;    
+}
+#bodyTopRight {   
+    float:right; 
+    width:9px;
+    /*height:640px;*/    /*此数字有待修改*/
+    background:url(../images/ifrRight.gif) repeat-y;    
+}
+#bodyBottom {
+    width:100%;
+    height:16px;   
+    background:url(../images/ifrBottom_bg1.gif) repeat-x;
+}
+
+/*框架内的信息*/
+.Title {
+    width:100%;
+    height:30px;
+    background:url(../images/titleBg.gif) repeat-x;
+    line-height:30px;    
+}
+.TitleName {
+    background:url(../images/titleArrow.jpg) no-repeat left center;    
+    padding-left:15px;
+    font-size:16px;
+    font-weight:bold;
+    margin-left:10px;
+}
+#addBtn {
+    background:url(../images/addBtnBg.jpg);
+    width:47px;
+    height:22px;
+    border:0;
+    margin:2px;
+}
+#sort {
+    border:0;
+}
+#updateSort {
+    background:url(../images/addBtnBg.jpg) no-repeat;
+    width:60px;
+    height:22px;
+    border:0;
+}
+#gv {
+    border:0;
+}
+table {        
+    width:98%;    
+    text-align:center;
+}
+    table tr{
+        border-bottom:1px solid #808080;
+        
+    }
+        table tr:hover {
+            cursor:pointer;
+        }
+td,th {
+    border:0;
+    border-right:1px solid #808080;
+}
+table th {
+   background:#e6f0fc;
+}
+
+/*添加栏目表格样式*/
+#EditColumnTable tr{
+    background:#e6f0fc
+}
+    #EditColumnTable tr td {
+        padding:5px;
+    }
+
+
+/*上传的图片*/
+#uploadImg {
+    width:120px;
+    height:120px;
+    position:absolute;
+    left:260px;
+    top:60px;
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+/*(修改/编辑)栏目信息*/
+.editColumnLeft {
+    text-align:right;
+    padding-right:5px;
+    border:0;
+}
+.editColumnRight {
+    text-align:left;
+    padding-left:5px;
+    border:0;
+}
+.editColumnLeftSort{
+    border:1px solid #ccc;
+}
+.btnBG {
+    background:url(../images/addBtnBg.jpg);
+    width:47px;
+    height:22px;
+    border:0;
+    cursor:pointer;
+}
+#searchText {
+    width:100px;
+}
+#gv {
+    color:#000066;
+}
+        #selAll {
+           margin:5px 0;
+        }
+        #gv table {
+            width:100%;
+            background:#b5dfde;            
+        }
+            #gv table td {
+                border-right:0;
+                text-align:right;                
+            }
+#NewsImg {
+    width:120px;
+    height:120px;
+    position:absolute;
+    display:none;
+}
+#tableStyle tr td {
+    border-right:none;
+}

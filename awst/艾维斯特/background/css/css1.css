@@ -1,0 +1,144 @@
+﻿body {
+    margin:0 auto;
+    padding:0;
+    width:100%;
+    font-size:12px;
+    font-family:宋体;
+}
+* {
+    margin:0 auto;
+    padding:0;
+}
+a {
+    text-decoration:none;
+}
+img {
+    border:0;
+}
+
+#backgroundLogin {
+    width:100%;
+}
+#bg_top {
+    width:100%;
+    height:41px;
+    background:url(../images/bg_top_bg.gif) repeat-x center;    
+}
+#bg_center {
+    width:100%;
+    height:532px;
+    background:url(../images/bg_center_bg.gif) repeat-x center;
+}
+/*中间左边*/
+#bg_center_left {
+    width:50%;
+    height:532px;
+    float:left;
+    background:url(../images/bg_center_center.gif) no-repeat center right;
+}
+#aboutLogo {
+    width:300px;
+    position:relative;
+    top:150px;
+    left:90px;    
+}
+/*server1,server2用来使图片和文本在同一水平线上*/
+/*思路：div里放个a标签，将图片设为div的背景将其定位在左边*/
+    #aboutLogo #server1 {
+        float:left;
+        width:100px;
+        height:27px;
+        line-height:27px;
+        background:url(../images/icon-demo.gif) no-repeat center left;    
+        text-indent:20px
+    }
+    #aboutLogo #server2 {
+        float:left;
+        width:100px;
+        height:27px;
+        line-height:27px;
+        background:url(../images/icon-login-seaver.gif) no-repeat center left;        
+        text-indent:20px
+    }
+    #aboutLogo p {
+        line-height:25px;
+        color:#67686c;
+        font-size:13px;             
+    }
+    #aboutLogo a {
+        color:#323337;        
+                             
+    }
+    /*中间右边*/
+#bg_center_right {
+    width:50%;
+    height:532px;    
+    float:left;
+    /*height:532px;*/
+}
+#login_info {    
+    float:left;
+    width:260px;
+    height:190px;
+    margin-left:30px;
+    margin-top:160px;    
+    
+}
+
+/*表格左边文字td*/
+.tableLeft {
+    width:50px;height:24px;
+}
+/*input所在的td*/
+.inputTxt {
+    width:160px;
+    height:20px;
+}
+    .inputTxt input {
+        border:0;
+    }
+/*登陆和取消按钮*/    
+.button1 {
+    width:45px;
+    height:23px;    
+}
+/*密码框input*/
+#userPwd {
+    width:160px;
+    height:20px;
+}
+/*验证码input*/
+#verity {
+    width:100px;                 /*如何在input有边框时使得table里内容左右对齐。验证码对齐*/
+    border:0;
+    
+}
+/*验证码*/
+#verifyCode {
+    float:right;
+    height:20px;
+    width:50px;   
+    margin-left:5px;
+             
+}
+/*取消按钮*/
+#cancel {
+    margin-left:70px;
+}
+#ooo {
+    align-items:center;
+    align-content:center;                /*要删除*/
+    align-self:center;
+}
+
+#bg_bottom {
+    width:100%;
+    height:60px;
+    background:url(../images/bg_bottom_bg.gif) repeat-x center;        
+}
+    #bg_bottom p {
+        text-align:center;
+        color:#9ec3d6;
+        font-size:15px;
+    }
+
