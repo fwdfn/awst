@@ -15,8 +15,8 @@ namespace 艾维斯特.background
     public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-                        
+        {              
+          
         }
         protected void login_btn_Click(object sender, EventArgs e)
         {
@@ -42,6 +42,6 @@ namespace 艾维斯特.background
             {
                 dbHelper.pageMsg(this.Page, "验证码错误","");                
             }
-        }
+        }        
     }
 }

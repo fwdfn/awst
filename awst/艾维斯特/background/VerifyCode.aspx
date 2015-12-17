@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerifyCode.aspx.cs" Inherits="艾维斯特.background.VerifyCode" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerifyCode.aspx.cs" Inherits="艾维斯特.background.VerifyCode" %>
 
 <!DOCTYPE html>
 

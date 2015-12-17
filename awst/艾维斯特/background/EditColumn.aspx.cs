@@ -15,19 +15,35 @@ namespace 艾维斯特.background
     //                      文件扩展名  System.IO.Path.getExtension("文件名");
     //                    文件上传路径  id.SaveAS(server.MapPath(路径+文件名))
     
-    public partial class EditColumn : System.Web.UI.Page
+    public partial class EditColumn : 艾维斯特.background.dataHelper.basePage
     {        
         public string columnInfo = string.Empty;
         public string uploadFileName = string.Empty;
-        protected void Page_Load(object sender, EventArgs e)
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (Request.QueryString["id"] != null)
+        //    {
+        //        columnInfo = "修改栏目信息";
+        //    }
+        //    else
+        //    {
+        //        columnInfo = "添加栏目信息";
+        //    }
+        //    if (!IsPostBack)
+        //    {
+        //        bindInfo();
+        //    }
+        //}
+        public override void pageLoad()
         {
+            //base.pageLoad();
             if (Request.QueryString["id"] != null)
             {
                 columnInfo = "修改栏目信息";
             }
             else
             {
-              columnInfo="添加栏目信息";
+                columnInfo = "添加栏目信息";
             }
             if (!IsPostBack)
             {
@@ -43,24 +59,43 @@ namespace 艾维斯特.background
             if (Request.QueryString["id"] != null)
             {
                 int id = Convert.ToInt32(Request.QueryString["id"]);
-                DataSet ds = dataHelper.dbHelper.getDS("select * from tb_menu where id=" + id);
-                name.Value = ds.Tables[0].Rows[0]["title"].ToString();
-                int num = Convert.ToInt32(ds.Tables[0].Rows[0]["isHide"]);
-                if (num == 0)
-                {
-                    Show.Checked = true;
+                //管理新闻栏目
+                if (Request.QueryString["type"] == null)
+                {                    
+                    DataSet ds = dataHelper.dbHelper.getDS("select * from tb_menu where id=" + id);
+                    name.Value = ds.Tables[0].Rows[0]["title"].ToString();
+                    int num = Convert.ToInt32(ds.Tables[0].Rows[0]["isHide"]);
+                    if (num == 0)
+                    {
+                        Show.Checked = true;
+                    }
+                    else
+                    {
+                        Hide.Checked = true;
+                    }
+                    if (ds.Tables[0].Rows[0]["picPath"] != null || ds.Tables[0].Rows[0]["picPath"].ToString() != "")
+                    {
+                        uploadImg.Src = "~/Upload/" + ds.Tables[0].Rows[0]["picPath"].ToString();                        
+                    }
+                    linkUrl.Value = ds.Tables[0].Rows[0]["linkUrl"].ToString();
+                    EditColumnRightsort.Value = ds.Tables[0].Rows[0]["sort"].ToString();
+                    txtContent.Value = ds.Tables[0].Rows[0]["content"].ToString();
                 }
-                else
-                {
-                    Hide.Checked = true;
+                    //管理产品栏目
+                else {
+                    DataSet ds = dataHelper.dbHelper.getDS("select * from tb_productColumn where id=" + id);
+                    name.Value = ds.Tables[0].Rows[0]["title"].ToString();
+                    int num = Convert.ToInt32(ds.Tables[0].Rows[0]["isHide"]);
+                    if (num == 0)
+                    {
+                        Show.Checked = true;
+                    }
+                    else
+                    {
+                        Hide.Checked = true;
+                    }                    
+                    EditColumnRightsort.Value = ds.Tables[0].Rows[0]["sort"].ToString();                    
                 }
-                if (ds.Tables[0].Rows[0]["picPath"] != null || ds.Tables[0].Rows[0]["picPath"].ToString() != "")
-                {
-                    uploadImg.Src = "~/Upload/" + ds.Tables[0].Rows[0]["picPath"].ToString();
-                }                
-                linkUrl.Value = ds.Tables[0].Rows[0]["linkUrl"].ToString();
-                EditColumnRightsort.Value = ds.Tables[0].Rows[0]["sort"].ToString();
-                txtContent.Value = ds.Tables[0].Rows[0]["content"].ToString();
             }            
         }
 
@@ -129,29 +164,45 @@ namespace 艾维斯特.background
                                   new SqlParameter("@content",txtContent.Value),
                                   new SqlParameter("@linkUrl",linkUrl.Value),
                                   new SqlParameter("@cdate",DateTime.Now),                                                                       
-                                  };
-                
+                                  };                
                 dataHelper.dbHelper.cmdExecute(sqlText, para);                                
                 dataHelper.dbHelper.pageMsg(this.Page, "添加成功", "column.aspx?id="+Convert.ToInt32(Request.QueryString["pid"]));
             }
             //修改功能
             if (Request.QueryString["id"] != null)
             {
-                int id = Convert.ToInt32(Request.QueryString["id"]);
-                sqlText = "update tb_menu set title=@title,isHide=@isHide,sort=@sort,picPath=@picPath,content=@content,linkUrl=@linkUrl,cdate=@cdate where id=@id";
-                SqlParameter[] para = {
+                int id = Convert.ToInt32(Request.QueryString["id"]);                    
+                    sqlText = "update tb_menu set title=@title,isHide=@isHide,sort=@sort,picPath=@picPath,content=@content,linkUrl=@linkUrl,cdate=@cdate where id=@id";
+                    SqlParameter[] para = {
                                   new SqlParameter("@title",name.Value),                                  
                                   new SqlParameter("@isHide",num),
                                   new SqlParameter("@sort",EditColumnRightsort.Value),
-                                  new SqlParameter("@picPath",""),
+                                  new SqlParameter("@picPath",ViewState["pic"]!=null?ViewState["pic"].ToString():""),
                                   new SqlParameter("@content",txtContent.Value),
                                   new SqlParameter("@linkUrl",linkUrl.Value),
                                   new SqlParameter("@cdate",DateTime.Now),   
                                   new SqlParameter("@id",id)                                                                    
                                   };
-                DataSet ds=dataHelper.dbHelper.getDS("select * from tb_menu where id="+id);
-                dataHelper.dbHelper.cmdExecute(sqlText, para);
-                dataHelper.dbHelper.pageMsg(this.Page,"修改成功","column.aspx?id="+Convert.ToInt32(ds.Tables[0].Rows[0]["pid"]));
+                    DataSet ds = dataHelper.dbHelper.getDS("select * from tb_menu where id=" + id);
+                    dataHelper.dbHelper.cmdExecute(sqlText, para);
+                    dataHelper.dbHelper.pageMsg(this.Page, "修改成功", "column.aspx?id=" + Convert.ToInt32(ds.Tables[0].Rows[0]["pid"]));
+                //if (Request.QueryString["type"] == null)
+                //{
+                //}
+                //else {
+                //    sqlText = "update tb_productColumn set title=@title,isHide=@isHide,sort=@sort,cdate=@cdate where id=@id";
+                //    SqlParameter[] para = {
+                //                  new SqlParameter("@title",name.Value),                                  
+                //                  new SqlParameter("@isHide",num),
+                //                  new SqlParameter("@sort",EditColumnRightsort.Value),                                                                                                      
+                //                  new SqlParameter("@cdate",DateTime.Now),   
+                //                  new SqlParameter("@id",id)                                                                    
+                //                  };
+                //    DataSet ds = dataHelper.dbHelper.getDS("select * from tb_productColumn where id=" + id);
+                //    dataHelper.dbHelper.cmdExecute(sqlText, para);
+                //    dataHelper.dbHelper.pageMsg(this.Page, "修改成功", "ProductFile/ProductList.aspx");
+                //}
+                
             }                        
         }
     }

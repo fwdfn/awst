@@ -204,6 +204,7 @@ table th {
     }
 
 
+
 /*上传的图片*/
 #uploadImg {
     width:120px;
@@ -236,6 +237,8 @@ table th {
     height:22px;
     border:0;
     cursor:pointer;
+    margin:0;
+    padding:0;
 }
 #searchText {
     width:100px;
@@ -246,13 +249,18 @@ table th {
         #selAll {
            margin:5px 0;
         }
-        #gv table {
+        #gv table {            
+            
             width:100%;
             background:#b5dfde;            
         }
-            #gv table td {
-                border-right:0;
-                text-align:right;                
+            #gv table tr {
+                float:right;
+                display:inline;
+                border-bottom:0;                                
+            }
+            #gv table td {                                
+                margin-right:10px;               
             }
 #NewsImg {
     width:120px;
@@ -262,4 +270,22 @@ table th {
 }
 #tableStyle tr td {
     border-right:none;
+}
+#searchDiv {
+    margin-bottom:5px;
+}
+#optimize tr{
+    background:#e6f0fc;
+}
+#optimize th,tr td{
+    border:0;
+}
+#EditColumnTable th{
+ border:0;
+}
+.resize {
+    resize:none;
+}
+.margin {
+    width:20%;
 }

@@ -9,15 +9,34 @@
     <link href="../css/bg_index_css.css" rel="stylesheet" />
     <script src="../../Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(function () {            
             $("#iframe", window.parent.document).height($("body").height());
-
             $('#imgColor').click(function () {
                 $('#colourPalette').css({ "left": $(this).position().left + 15 + "px", "top": $(this).position().top + 45 + "px" });
                 if (document.getElementById("colourPalette").style.visibility == "hidden") {
                     document.getElementById("colourPalette").style.visibility = "visible";
                 } else {
                     document.getElementById("colourPalette").style.visibility = "hidden";
+                }
+            });
+            //序号不能为空(添加新闻功能)
+            $("#EditColumnRightsort").blur(function () {
+                //不是数字时
+                if (isNaN($("#EditColumnRightsort").val()))
+                {                    
+                    setTimeout(function () {
+                        $("#EditColumnRightsort").focus();
+                        $("#EditColumnRightsort").val(0);
+                        alert("请输入数字");                        
+                    }, 300);
+                }
+                else if($(this).val()=="")
+                {                    
+                    setTimeout(function () {
+                        $("#EditColumnRightsort").focus();
+                        $("#EditColumnRightsort").val(0);
+                        alert("不能为空");
+                    }, 300);
                 }
             });
         });
@@ -67,7 +86,11 @@
                      <tr>
                          <td class="editColumnLeft">所属栏目：</td>
                          <td class="editColumnRight">
-                             <asp:DropDownList runat="server" ID="ddlType">
+                             <asp:DropDownList runat="server" ID="ddlType" AutoPostBack="true" OnSelectedIndexChanged="ddlType_SelectedIndexChanged">
+                                 <asp:ListItem Value="0" Selected="True">请选择</asp:ListItem>
+                             </asp:DropDownList>
+                             <asp:DropDownList ID="ddlPSY" runat="server">
+                                 <asp:ListItem Value="0" Selected="True">请选择</asp:ListItem>
                              </asp:DropDownList>
                          </td>
                      </tr>                       
@@ -137,7 +160,7 @@
                              <input type="button" id="cancelBtn" runat="server" value="取消" class="btnBG"  />
                          </td>
                      </tr>               
-                </table>              
+                </table>             
                 <%--<img id="uploadImg" src="#" runat="server" />--%>          
         </div>
         <div id="bodyBottom">

@@ -72,8 +72,7 @@
                       </asp:TemplateField>                      
                  </Columns>                
             </asp:GridView> 
-            <asp:Button ID="updateSort" runat="server" Text="更新排序" />
-            <asp:TextBox ID="abc" runat="server" Text="品牌"></asp:TextBox>
+            <%--<asp:Button ID="updateSort" runat="server" Text="更新排序" />这里可以做一个按钮排序的功能--%>            
         </div>
         <div id="bodyBottom">
             <img src="images/ifrBottom_bg2.jpg" class="bgLeft" />

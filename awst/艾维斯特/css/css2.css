@@ -20,9 +20,7 @@ a {
 /*全局容器*/
 #container {
     width:1005px;
-    margin:0 auto;    
-
-          
+    margin:0 auto;              
 }
 
 
@@ -157,27 +155,31 @@ a {
     background:#f9f9f9;    
 }
 #productTypeTxt ul {
-    width:240px;                
+    width:240px;        
 }
 
     
 
     #productTypeTxt ul li{
-        /*height:34px;*/         /*不能设置一级li的高度，会限制二级li的高度*/
-        /*width:240px;*/
+
         font-size:14px;  
         line-height:34px;
-        background:url(../images/add.jpg) no-repeat left center;                /*设置+号*/
-        text-indent:10px;             
+        background:url(../images/add.jpg) no-repeat left 13px;
+        text-indent:10px;        
+             
     }
-        #productTypeTxt ul li ul li {   
+        #productTypeTxt ul li li {   
             clear:both;         
             height:34px;
             font-size:14px;
             line-height:34px;            
-            background:url(../images/reduce.jpg) no-repeat center left;        /*设置减号*/
-            text-indent:20px;                        
-        }                            
+            background:url(../images/reduce.jpg) no-repeat 10px center ;      
+            text-indent:20px;
+  
+                             
+            
+        }      
+                             
     /*#productTypeTxt ul li{
     font-size:14px;
     width:240px;
@@ -241,24 +243,31 @@ a {
 }
     
     #news .more {
-        top:-30px;
+       top:-30px;
     }
     #news #newsTitle {
-     background:blue;    
-        
+       height:36px;               
     }
     
     #news #newsInfo {
         clear:both;
     }
-        #news #newsInfo ul {
-            width:222px;
+        #news #newsInfo ul {            
+            width:222px;        
+            margin-top:10px;    
             margin-left:20px;
         } 
         #news #newsInfo ul li {
             line-height:30px;                        
-            border-bottom:1px dotted #b1b1b1;        
+            border-bottom:1px dotted #b1b1b1;                                
+            background:url(../images/news_07.jpg) no-repeat 10px center;
+            text-indent:10px;
+            
         }
+            #news #newsInfo ul li a {
+                padding-left:10px;
+            }
+
 /*旋转木马*/
 #gogoing {
     float:left;
@@ -322,4 +331,284 @@ a {
 }
     #copyRight a {
         color:white;
+    }
+
+/*用户控件块*/
+#ucCenter {
+    margin-top:15px;
+    margin-bottom:20px;
+    margin-bottom:13px;
+}
+#ucLeft #About {
+    width:260px;
+    /*height:255px;*/
+    margin-bottom:35px;
+    
+}
+#aboutTitle {
+    /*height:200px;*/
+    width:258px;
+    background:#f9f9f9;
+    border:1px solid #e1e1e1;
+    border-top:0;
+}
+#ucLeft #About ul {
+        margin-left:8px;
+        width:245px;
+        
+    }
+#ucLeft #About ul li {
+            height:50px;
+            line-height:50px;
+            border-bottom:1px solid #e1e1e1;
+            background:url(../images/AboutArrows.jpg) no-repeat 20px center;
+            text-indent:45px;
+            font-size:15px;
+        }
+#ucLeft #About ul li a {
+                color:#333333;
+            }
+#ucLeft #About ul li a:hover {
+     color:#006087;
+     font-weight:bold;
+}
+
+#ucProduct #aboutTitle ul{
+    padding-left:20px;
+    
+}
+#ucProduct #aboutTitle ul ul{
+    padding-left:0px;   
+}
+#ucProduct #aboutTitle ul ul li{
+    padding-left:20px;
+    text-indent:10px;
+    background: url(../images/reduce.jpg) no-repeat 20px center; 
+    display:block;  
+}
+#ucProduct #aboutTitle ul li {
+    color:black;
+    font-weight:bold;
+}
+
+
+#contact {
+    height:219px;
+    width:258px;
+    border:1px solid #e1e1e1;
+
+}
+#aboutContact ul {
+    margin-left:20px;
+}
+#aboutContact ul li {
+    height:30px;
+    line-height:30px;
+
+}
+#content {
+    width:725px;     
+    float:left;
+    margin-left:15px;
+    margin-bottom:13px
+    
+}
+#guide {
+    height:44px;
+    width:100%;
+    line-height:44px;
+    border-bottom:1px solid #c9c9c9;
+}
+    #guide h3 {        
+        background:url(../images/AboutArrows2.jpg) no-repeat left 0px;                
+        display:inline;
+        padding-left:20px;
+    }
+    #guide span {
+        
+        float:right;
+        background:url(../images/AboutArrows3.jpg) no-repeat left center;
+        text-indent:20px;
+    }
+        #guide span a {
+            color:#333333;
+        }
+
+#difBorder{
+    width:725px;    
+    margin-top:50px;
+    text-align:left;
+    line-height:30px;    
+}
+    #difBorder p {
+        font-size:14px;width:630px;
+    }
+#difContent {    
+    width:650px;
+    height:100%;
+    margin-left:37px;
+}
+.FCblue {
+    color:blue;
+}
+#job {
+    padding-left:27px;
+    margin-top:50px;
+    text-align:left;
+    line-height:30px;
+    width:660px;
+    height:100%;
+}
+    #job p {
+        font-size:14px;width:630px;
+    }
+    #job ul li {
+        margin-top:10px;
+        border:1px solid #ccc;        
+    }
+.job {    
+    border-bottom:1px dotted #757575;
+    height:220px;
+    width:660px;    
+}
+    .job p {
+        padding-left:20px;
+        
+    }
+
+.USP {
+    margin-left:30px;
+}
+
+#msgTable {
+    padding-left:120px;
+    padding-top:25px;
+}
+.BtnCss1 {
+    background:url(../images/addBtnBg.jpg);
+    border:0;
+    width:47px;
+    height:22px;
+}
+#service {
+    margin-left:180px;
+    margin-top:100px;
+    
+}
+.Pstyle {
+    padding-left:28px;text-indent:-28px;
+}
+/**/
+.msg_name {
+    font-size:small;
+    
+}
+.msg_text {
+    font-size:small;    
+}
+#job a {
+    margin-right:5px;
+    color:#333333;
+}
+#job a:hover {
+    color:blue;
+}
+
+/*新闻列表*/
+#newsList ul li {
+    width:90%;
+    height:40px;
+    line-height:40px;
+    border-bottom:1px dotted red;
+    text-align:center;
+    margin-left:5%;        
+}
+    #newsList ul li a {
+        float:left;
+        margin-left:20px;
+    }
+    #newsList ul li span {
+        float:right;
+        margin-right:20px;
+    }
+
+.hideBtn {
+    display:none;
+}
+
+/*产品图片样式*/
+#productUL li{
+    width:186px;height:235px;
+}
+
+#difContent div{
+    /*text-align:center;*/    
+}
+#difContent div:hover{
+    /*text-align:center;
+    background:#006087;*/
+    
+}
+#productUL li div p{
+    text-align:center;
+}
+
+#productUL li {
+    float:left;
+    margin-right:30px;
+    margin-top:30px;
+}
+#productUL li div img {
+    
+    border:13px solid #eaeaea;
+    width: 160px; height: 160px;margin:0 auto;display:block;
+}
+/*#difContent ul li div img:hover{
+    
+    border:13px solid #006087;
+    width: 160px; height: 160px;margin:0 auto;display:block;
+}*/
+#productUL li div p {
+    width:185px;height:20px;margin:0;padding:0;
+    line-height:20px;
+}
+#productUL li > p {
+    width:186px;height:28px;
+}
+/*点击新闻列表，进入新闻内容*/
+.news {
+    width:90%;
+    margin-left:5%;
+    margin-top:50px;
+}
+.newsTitle {
+    text-align:center;
+    height:40px;
+    line-height:40px;
+    font-weight:bold;    
+    border-bottom:1px solid #cccccc;
+}
+.counts {
+    height:25px;
+    line-height:25px;
+    text-align:center;    
+}
+.newsImg {
+  
+}
+
+.otherNews {
+    
+}
+    .otherNews ul li {
+        height:24px;
+        line-height:24px;
+    }
+.print {
+    height:30px;
+    line-height:30px;
+    text-align:right;    
+}
+    .print a {
+        margin-right:20px;
     }

@@ -11,11 +11,27 @@ using System.Text;
 
 namespace 艾维斯特.background.NewsFile
 {
-    public partial class News : System.Web.UI.Page
+    public partial class News :dataHelper.basePage
     {
         public string sqlSelectText = "select * from tb_newsInfo";
-        protected void Page_Load(object sender, EventArgs e)
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        bindInfo();
+        //        DataSet ds = dataHelper.dbHelper.getDS("select * from tb_menu where pid=" + Convert.ToInt32(Request.QueryString["id"]));
+        //        ddlType.DataSource = ds;
+        //        ddlType.DataTextField = "title";
+        //        ddlType.DataValueField = "id";
+        //        ddlType.DataBind();
+        //        ddlType.Items.Add(new ListItem("所有类别", "0"));
+        //        ddlType.SelectedValue = "0";
+        //    }
+
+        //}
+        public override void pageLoad()
         {
+            //base.pageLoad();
             if (!IsPostBack)
             {
                 bindInfo();
@@ -27,8 +43,8 @@ namespace 艾维斯特.background.NewsFile
                 ddlType.Items.Add(new ListItem("所有类别", "0"));
                 ddlType.SelectedValue = "0";
             }
-
         }
+        //绑定信息的2个重载
         protected void bindInfo()
         {
             DataSet ds = dataHelper.dbHelper.getDS("select * from tb_newsInfo");
@@ -91,7 +107,7 @@ namespace 艾维斯特.background.NewsFile
             bindInfo(sqlText);
         }
         /// <summary>
-        /// 审核
+        /// 审核事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -118,7 +134,6 @@ namespace 艾维斯特.background.NewsFile
         /// <param name="e"></param>
         protected void ddlSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             string sqlText = getSort(bindInfoByConditions());
             bindInfo(sqlText);
         }
@@ -130,15 +145,23 @@ namespace 艾维斯特.background.NewsFile
         /// <param name="e"></param>
         protected void ddlSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             string sqlText = getSort(bindInfoByConditions());
             bindInfo(sqlText);
         }
+        /// <summary>
+        /// 所属类型
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlText = getSort(bindInfoByConditions());
             bindInfo(sqlText);
         }
+        /// <summary>
+        /// 是否审核，是否推荐
+        /// </summary>
+        /// <returns></returns>
         public string bindInfoByConditions()
         {
             switch (ddlSelect.SelectedIndex)
@@ -195,18 +218,30 @@ namespace 艾维斯特.background.NewsFile
             }
             return sqlSelectText;
         }
-
+        /// <summary>
+        /// 搜索事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void searchBtn_Click(object sender, EventArgs e)
         {
             string sqlText = getSort(bindInfoByConditions() + " and title like '%" + searchText.Value + "%'");
             bindInfo(sqlText);
         }
-
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewsInformationManager.aspx?");
         }
-
+        /// <summary>
+        /// 更新新闻
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
             //定义变量num用来进行传值，因num无值设其为0，但0并无作用，求更好的办法

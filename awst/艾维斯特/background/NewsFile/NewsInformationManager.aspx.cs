@@ -10,14 +10,57 @@ using System.Timers;
 
 namespace 艾维斯特.background.NewsFile
 {
-    public partial class NewsInformationManager : System.Web.UI.Page
+    public partial class NewsInformationManager : dataHelper.basePage
     {
         public string columnInfo = string.Empty;
-        protected void Page_Load(object sender, EventArgs e)
+        public string ddlSecondaryClass = string.Empty;
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        if (Request.QueryString["type"] == null)
+        //        {
+        //            bindType("select * from tb_menu where pid=5");                    
+        //        }
+        //        else {                    
+        //            bindType("select * from tb_productColumn where pid=0");
+        //            ddlType.Items.Add(new ListItem("请选择", "-1"));
+        //            ddlType.SelectedValue = "-1";
+        //            //ddlPSY.DataSource = dataHelper.dbHelper.getDS("select * from tb_productColumn where pid= ");
+        //            //ddlPSY.DataTextField = "title";
+        //            //ddlPSY.DataValueField = "id";
+        //            //ddlPSY.DataBind();
+        //        }
+        //        if (Request.QueryString["id"] != null)
+        //        {
+        //            columnInfo = "修改新闻信息";
+        //            bindUpdateInfo(Convert.ToInt32(Request.QueryString["id"]));
+        //        }
+        //        else
+        //        {
+        //            columnInfo = "添加新闻信息";
+        //        }                
+        //    }              
+        //}
+        public override void pageLoad()
         {
+            //base.pageLoad();
             if (!IsPostBack)
             {
-                bindType();
+                if (Request.QueryString["type"] == null)
+                {
+                    bindType("select * from tb_menu where pid=5");
+                }
+                else
+                {
+                    bindType("select * from tb_productColumn where pid=0");
+                    ddlType.Items.Add(new ListItem("请选择", "-1"));
+                    ddlType.SelectedValue = "-1";
+                    //ddlPSY.DataSource = dataHelper.dbHelper.getDS("select * from tb_productColumn where pid= ");
+                    //ddlPSY.DataTextField = "title";
+                    //ddlPSY.DataValueField = "id";
+                    //ddlPSY.DataBind();
+                }
                 if (Request.QueryString["id"] != null)
                 {
                     columnInfo = "修改新闻信息";
@@ -26,17 +69,17 @@ namespace 艾维斯特.background.NewsFile
                 else
                 {
                     columnInfo = "添加新闻信息";
-                }                
-            }              
+                }
+            }  
         }
         /// <summary>
         /// 绑定父级栏目
         /// </summary>
-        public void bindType()
+        public void bindType(string sqlText)
         {
-            ddlType.DataSource = dataHelper.dbHelper.getDS("select * from tb_menu where pid=5");
+            ddlType.DataSource = dataHelper.dbHelper.getDS(sqlText);
             ddlType.DataTextField = "title";
-            ddlType.DataValueField = "id";
+            ddlType.DataValueField = "id";            
             ddlType.DataBind();
         }
         /// <summary>
@@ -110,7 +153,24 @@ namespace 艾维斯特.background.NewsFile
                 dataHelper.dbHelper.cmdExecute(sqlText,para);
                 dataHelper.dbHelper.pageMsg(this,"添加成功","../News.aspx");                
             }
+        }        
+
+        protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ddlType.SelectedValue) < 0)
+            {
+                ddlPSY.Items.Add(new ListItem("请选择", "-1"));
+                ddlPSY.SelectedValue = "-1";
+            }
+            else {
+                ddlPSY.DataSource = dataHelper.dbHelper.getDS("select * from tb_productColumn where pid=" + ddlType.SelectedValue);
+                ddlPSY.DataTextField = "title";
+                ddlPSY.DataValueField = "id";
+                ddlPSY.DataBind();
+            }
+            
         }
+       
         //protected void uploadBtn_Click(object sender,EventArgs e)
         //{
 

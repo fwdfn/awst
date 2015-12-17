@@ -9,13 +9,21 @@ using System.Data.SqlClient;
 
 namespace 艾维斯特.background
 {
-    public partial class column : System.Web.UI.Page
+    public partial class column : dataHelper.basePage
     {        
-        protected void Page_Load(object sender, EventArgs e)
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        bindInfo();                
+        //    }
+        //}
+        public override void pageLoad()
         {
+            //base.pageLoad();
             if (!IsPostBack)
             {
-                bindInfo();                
+                bindInfo();
             }
         }
         /// <summary>
@@ -31,7 +39,7 @@ namespace 艾维斯特.background
         }
 
         /// <summary>
-        /// 重新排序
+        /// 文本框的重新排序
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -57,8 +65,6 @@ namespace 艾维斯特.background
         {
             e.Row.Attributes.Add("onmouseover", "c=this.style.background;this.style.background='#e6f0fc'");
             e.Row.Attributes.Add("onmouseout", "this.style.background=c");
-           // e.Row.Attributes.Add("onmouseover", "c=this.style.background;this.style.background=#ccc");
-           // e.Row.Attributes.Add("onmouseout", "this.style.background=c;");
         }
         /// <summary>
         /// 点击添加栏目按钮

@@ -12,7 +12,6 @@
         function abc() {
             alert("取消");
         }
-
         //此方法和login_btn点击事件二选一
         //function isNull() {
         //    if ($("#verity").val() == "" || $("#userName").val() == "" || $("#userPwd").val() == "") {
@@ -36,6 +35,35 @@
                 }
             });
         });
+        //关闭当前页面
+        function CloseWebPage() {            
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+                    if (confirm("是否关闭当前页面")) {
+                        window.opener = null;
+                        window.close();
+                    }
+                } else {
+                    if (confirm("是否关闭当前页面")) {
+                        window.open('', '_top');
+                        window.top.close();
+                    }
+                }
+            }
+            else if (navigator.userAgent.indexOf("Firefox") > 0) {
+                if (confirm("是否关闭当前页面"))
+                {
+                    //关闭FF的实质是将当前页面地址设为about:blank 
+                    window.location.href = 'about:blank ';
+                }                
+            } else {
+                if (confirm("是否关闭当前页面")) {                    
+                    window.opener = null;
+                    window.open('', '_self', '');
+                    window.close();
+                }
+            }
+        }
     </script>
 </head>
 <body>
@@ -84,13 +112,14 @@
                          <td colspan="2">
                              <%--<input class="button1"  type="button" id="login_btn" value="登陆" runat="server" onserverclick="login_btn_Click" />--%>                                                          
                              <asp:Button ID="login_btn" runat="server" CssClass="button1" Text="登陆" OnClientClick="return isNull()"  OnClick="login_btn_Click"  />
-                             <input  class="button1" id="cancel" type="button" value="取消" runat="server" onclick="abc()"  />
+                             <input  class="button1" id="cancel" type="button" value="取消" runat="server" onclick='CloseWebPage()' />
+                             
                          </td>                         
                      </tr>
                  </table>
             </div>
         </div>
-        <div id="bg_bottom">
+        <div id="bg_bottom" style="line-height:60px;">
                <p>Copyright&copy2009-2015</p>             
         </div>
     </div>

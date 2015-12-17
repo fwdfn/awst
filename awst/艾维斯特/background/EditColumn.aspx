@@ -10,18 +10,16 @@
     <link href="css/bg_index_css.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
+            //将父页面的iframe元素的高度设为此页面body的高度
             $("#iframe",window.parent.document).height($("body").height());
             $("#bodyTopLeft").height($("#bodyTop").height());
-            $("#bodyTopRight").height($("#bodyTop").height());            
+            $("#bodyTopRight").height($("#bodyTop").height());
+            //框架的动态高度
             $(window).resize(
                 function () {
                     $("#bodyTopLeft").height($("#bodyTop").height());
                     $("#bodyTopRight").height($("#bodyTop").height());
-                    $("#iframe", window.parent.document).height($("body").height());
-                    //alert($("#EditColumnTable tr td").css("padding"));
-                    //当window变小时gv不会因为过大而溢出
-                    //  $("table").width($("#bodyTop").width()-16);
-                    //$("body").height($("#title").height() + $("#bodyTop").height() + $("#bodyBottom").height());                  
+                    $("#iframe", window.parent.document).height($("body").height());                  
                 }
             );                                 
         })
@@ -47,8 +45,8 @@
                      <tr>
                          <td class="editColumnLeft">是否隐藏：</td>
                          <td class="editColumnRight">
-                             <input type="radio" id="Hide" runat="server" name="isHide" />
-                             <input type="radio" id="Show" runat="server" checked=true  name="isHide" />
+                             是：<input type="radio" id="Hide" runat="server" name="isHide" />
+                             否：<input type="radio" id="Show" runat="server" checked=true  name="isHide" />
                          </td>
                      </tr>   
                      <tr>

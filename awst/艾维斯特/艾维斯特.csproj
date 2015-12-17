@@ -149,15 +149,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="AboutUS.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="background\abc.aspx" />
     <Content Include="background\Advertising.aspx" />
+    <Content Include="background\AdvertisingFile\Advertising.aspx" />
+    <Content Include="background\AdvertisingFile\AdvertisingManager.aspx" />
     <Content Include="background\column.aspx" />
+    <Content Include="background\CopyRight.aspx" />
     <Content Include="background\css\bg_index_css.css" />
     <Content Include="background\css\css1.css" />
     <Content Include="background\EditColumn.aspx" />
@@ -190,11 +192,78 @@
     <Content Include="background\images\titleBg.gif" />
     <Content Include="background\index.aspx" />
     <Content Include="background\login.aspx" />
-    <Content Include="background\News.aspx" />
+    <Content Include="background\MessageBoardFile\MessageBoard.aspx" />
+    <Content Include="background\MessageBoardFile\MessageBoardManager.aspx" />
     <Content Include="background\NewsFile\News.aspx" />
     <Content Include="background\NewsFile\NewsInformationManager.aspx" />
-    <Content Include="background\ProductFile\ProductList.aspx" />
+    <Content Include="background\ProductFile\ProductManager.aspx" />
+    <Content Include="background\ProductFile\ProductType.aspx" />
+    <Content Include="background\ProductFile\Product.aspx" />
+    <Content Include="background\ProductFile\ProductTypeManager.aspx" />
     <Content Include="background\VerifyCode.aspx" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\FredCK.FCKeditorV2.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="bin\zh-Hans\EntityFramework.SqlServer.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Security.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Providers.resources.dll" />
+    <Content Include="bin\艾维斯特.dll" />
+    <Content Include="bin\艾维斯特.pdb" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -465,7 +534,14 @@
     <Content Include="images\3.jpg" />
     <Content Include="images\4.jpg" />
     <Content Include="images\5.jpg" />
+    <Content Include="images\abc.jpg" />
+    <Content Include="images\AboutArrows.jpg" />
+    <Content Include="images\AboutArrows2.jpg" />
+    <Content Include="images\AboutArrows3.jpg" />
+    <Content Include="images\about_25.jpg" />
+    <Content Include="images\about_26.jpg" />
     <Content Include="images\add.jpg" />
+    <Content Include="images\addBtnBg.jpg" />
     <Content Include="images\bannerBg.jpg" />
     <Content Include="images\carousel1.jpg" />
     <Content Include="images\carousel2.jpg" />
@@ -476,54 +552,36 @@
     <Content Include="images\companyName.jpg" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\logo2.jpg" />
+    <Content Include="images\model.jpg" />
     <Content Include="images\more.jpg" />
     <Content Include="images\more2.jpg" />
     <Content Include="images\news.jpg" />
+    <Content Include="images\news_01.jpg" />
+    <Content Include="images\news_07.jpg" />
     <Content Include="images\number.jpg" />
     <Content Include="images\phone-3.jpg" />
     <Content Include="images\phoneNumber.jpg" />
     <Content Include="images\price.gif" />
     <Content Include="images\productShow.jpg" />
     <Content Include="images\productTypePic.jpg" />
+    <Content Include="images\product_05.jpg" />
     <Content Include="images\reduce.jpg" />
     <Content Include="images\searchBtnBg.jpg" />
     <Content Include="images\searchInputBg.jpg" />
-    <Content Include="js\images\1.jpg" />
-    <Content Include="js\images\2.jpg" />
-    <Content Include="js\images\3.jpg" />
-    <Content Include="js\images\4.jpg" />
-    <Content Include="js\images\5.jpg" />
-    <Content Include="js\images\add.jpg" />
-    <Content Include="js\images\bannerBg.jpg" />
     <Content Include="background\images\bg_index_left_bgTu1.jpg" />
     <Content Include="background\images\bg_index_left_bgTu2.jpg" />
-    <Content Include="js\images\carousel1.jpg" />
-    <Content Include="js\images\carousel2.jpg" />
-    <Content Include="js\images\carousel3.jpg" />
-    <Content Include="js\images\carousel4.jpg" />
-    <Content Include="js\images\carousel5.jpg" />
-    <Content Include="js\images\companyIntroduce.jpg" />
-    <Content Include="js\images\companyName.jpg" />
-    <Content Include="js\images\logo.jpg" />
-    <Content Include="js\images\logo2.jpg" />
-    <Content Include="js\images\more.jpg" />
-    <Content Include="js\images\more2.jpg" />
-    <Content Include="js\images\news.jpg" />
-    <Content Include="js\images\number.jpg" />
-    <Content Include="js\images\phone-3.jpg" />
-    <Content Include="js\images\phoneNumber.jpg" />
-    <Content Include="js\images\price.gif" />
-    <Content Include="js\images\productShow.jpg" />
-    <Content Include="js\images\productTypePic.jpg" />
-    <Content Include="js\images\reduce.jpg" />
-    <Content Include="js\images\searchBtnBg.jpg" />
-    <Content Include="js\images\searchInputBg.jpg" />
+    <Content Include="images\s_btn.gif" />
+    <Content Include="images\TopBan.jpg" />
+    <Content Include="images\杭州奥盛2014年授权.jpg" />
+    <Content Include="images\杭州柏恒授权书_副本.jpg" />
     <Content Include="index.aspx" />
-    <Content Include="index3.aspx" />
     <Content Include="index4.aspx" />
     <Content Include="js\js1.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\owl.carousel.min.js" />
+    <Content Include="Message.aspx" />
+    <Content Include="News.aspx" />
+    <Content Include="NewsDetailed.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -533,7 +591,10 @@
     <Content Include="fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <Content Include="fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
     <Content Include="background\images\post\Thumbs.db" />
+    <Content Include="bin\FredCK.FCKeditorV2.dll.refresh" />
+    <Content Include="bin\艾维斯特.dll.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Product.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -566,8 +627,23 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Service.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="sub9.aspx" />
+    <Content Include="ucManage\Left.ascx" />
+    <Content Include="ucManage\Product.ascx" />
+    <Content Include="ucManage\Top.ascx" />
+    <Content Include="ucManage\Bottom.ascx" />
+    <Content Include="Upload\1.jpg" />
+    <Content Include="Upload\2.jpg" />
+    <Content Include="Upload\3.jpg" />
+    <Content Include="Upload\4.jpg" />
+    <Content Include="Upload\5.jpg" />
     <Content Include="Upload\a.jpg" />
+    <Content Include="Upload\abc.jpg" />
+    <Content Include="Upload\s_btn.gif" />
+    <Content Include="Upload\u=3580210867,3098509580&amp;fm=21&amp;gp=0.jpg" />
+    <Content Include="Upload\uuu.jpg" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -584,6 +660,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUS.aspx.cs">
+      <DependentUpon>AboutUS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUS.aspx.designer.cs">
+      <DependentUpon>AboutUS.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -620,28 +703,28 @@
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="background\abc.aspx.cs">
-      <DependentUpon>abc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="background\abc.aspx.designer.cs">
-      <DependentUpon>abc.aspx</DependentUpon>
-    </Compile>
     <Compile Include="background\Advertising.aspx.cs">
       <DependentUpon>Advertising.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="background\Advertising.aspx.designer.cs">
       <DependentUpon>Advertising.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\AdvertisingFile\Advertising.aspx.cs">
+      <DependentUpon>Advertising.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\AdvertisingFile\Advertising.aspx.designer.cs">
+      <DependentUpon>Advertising.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\AdvertisingFile\AdvertisingManager.aspx.cs">
+      <DependentUpon>AdvertisingManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\AdvertisingFile\AdvertisingManager.aspx.designer.cs">
+      <DependentUpon>AdvertisingManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="background\column.aspx.cs">
       <DependentUpon>column.aspx</DependentUpon>
@@ -650,6 +733,17 @@
     <Compile Include="background\column.aspx.designer.cs">
       <DependentUpon>column.aspx</DependentUpon>
     </Compile>
+    <Compile Include="background\CopyRight.aspx.cs">
+      <DependentUpon>CopyRight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\CopyRight.aspx.designer.cs">
+      <DependentUpon>CopyRight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\dataHelper\basePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\dataHelper\Class1.cs" />
     <Compile Include="background\dataHelper\dbHelper.cs" />
     <Compile Include="background\dataHelper\Encrption.cs" />
     <Compile Include="background\EditColumn.aspx.cs">
@@ -673,12 +767,19 @@
     <Compile Include="background\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="background\News.aspx.cs">
-      <DependentUpon>News.aspx</DependentUpon>
+    <Compile Include="background\MessageBoardFile\MessageBoard.aspx.cs">
+      <DependentUpon>MessageBoard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="background\News.aspx.designer.cs">
-      <DependentUpon>News.aspx</DependentUpon>
+    <Compile Include="background\MessageBoardFile\MessageBoard.aspx.designer.cs">
+      <DependentUpon>MessageBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\MessageBoardFile\MessageBoardManager.aspx.cs">
+      <DependentUpon>MessageBoardManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\MessageBoardFile\MessageBoardManager.aspx.designer.cs">
+      <DependentUpon>MessageBoardManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="background\NewsFile\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
@@ -694,12 +795,33 @@
     <Compile Include="background\NewsFile\NewsInformationManager.aspx.designer.cs">
       <DependentUpon>NewsInformationManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="background\ProductFile\ProductList.aspx.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="background\ProductFile\ProductManager.aspx.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="background\ProductFile\ProductList.aspx.designer.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="background\ProductFile\ProductManager.aspx.designer.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\ProductFile\ProductType.aspx.cs">
+      <DependentUpon>ProductType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\ProductFile\ProductType.aspx.designer.cs">
+      <DependentUpon>ProductType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\ProductFile\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\ProductFile\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="background\ProductFile\ProductTypeManager.aspx.cs">
+      <DependentUpon>ProductTypeManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="background\ProductFile\ProductTypeManager.aspx.designer.cs">
+      <DependentUpon>ProductTypeManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="background\VerifyCode.aspx.cs">
       <DependentUpon>VerifyCode.aspx</DependentUpon>
@@ -732,13 +854,6 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index3.aspx.cs">
-      <DependentUpon>index3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index3.aspx.designer.cs">
-      <DependentUpon>index3.aspx</DependentUpon>
-    </Compile>
     <Compile Include="index4.aspx.cs">
       <DependentUpon>index4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -746,8 +861,43 @@
     <Compile Include="index4.aspx.designer.cs">
       <DependentUpon>index4.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsDetailed.aspx.cs">
+      <DependentUpon>NewsDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsDetailed.aspx.designer.cs">
+      <DependentUpon>NewsDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.aspx.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service.aspx.designer.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -763,6 +913,41 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="sub9.aspx.cs">
+      <DependentUpon>sub9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sub9.aspx.designer.cs">
+      <DependentUpon>sub9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ucManage\Left.ascx.cs">
+      <DependentUpon>Left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucManage\Left.ascx.designer.cs">
+      <DependentUpon>Left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucManage\Product.ascx.cs">
+      <DependentUpon>Product.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucManage\Product.ascx.designer.cs">
+      <DependentUpon>Product.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucManage\Top.ascx.cs">
+      <DependentUpon>Top.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucManage\Top.ascx.designer.cs">
+      <DependentUpon>Top.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucManage\Bottom.ascx.cs">
+      <DependentUpon>Bottom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucManage\Bottom.ascx.designer.cs">
+      <DependentUpon>Bottom.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -773,7 +958,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="background\UploadImg\" />
     <Folder Include="fckeditor\editor\filemanager\connectors\aspx\upload\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

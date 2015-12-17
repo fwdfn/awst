@@ -46,6 +46,20 @@ namespace 艾维斯特.background.dataHelper
             }
             return cmd.ExecuteNonQuery();                        
         }
+        //public static SqlDataReader getDataReader(string sqlText)
+        //{
+        //    SqlConnection conn = getConn();
+        //    conn.Open();
+        //    SqlCommand cmd = new SqlCommand(sqlText, conn);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+           
+        //    while (dr.Read())
+        //    { 
+                 
+        //    }
+        //    conn.Close();
+            
+        //}
         /// <summary>
         /// 输出信息并跳转页面
         /// </summary>

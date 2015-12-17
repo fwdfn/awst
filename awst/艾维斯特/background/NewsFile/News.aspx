@@ -12,8 +12,18 @@
         //判断是否选中
         //函数里使用return false才不会刷新页面               
         $(function () {
-            
-            $("#gv table tr td").first().attr("width", "80%");
+            //全选
+            $("#selAll").click(function () {                
+                $("#gv :checkbox").prop("checked", "true");
+            });
+            //反选 
+            //prop:获取在匹配的元素集中的第一个元素的属性值。
+            $("#selOpposite").click(function () {
+                $("#gv :checkbox").prop("checked", function (e, val) {
+                    return !val;
+                });
+            });
+                      
             //获取新闻图片
             $("#gv a").click(function (e) {
                 if ($(this).attr("src") != "") {
@@ -32,6 +42,21 @@
             $("#bodyTopLeft").height($("#bodyTop").height());
             $("#bodyTopRight").height($("#bodyTop").height());
         });
+
+        function isChecked(str) {
+            //每次点击时num会被重新赋值为0
+            var num = 0;
+            $("#gv :checked").each(function () {
+                if ($(this).prop("checked") == true) {
+                    num++;
+                }
+            });
+            if (num == 0) {
+                alert("请至少选一个");
+                return false;
+            }
+            return confirm(str);
+        }
         //修改新闻判断是否只选择了一个
         function oneChecked() {
             var num = 0;
@@ -134,11 +159,11 @@
                               <%#Convert.ToInt32(Eval("isverify"))==1?"已审核":"未审核" %>
                          </ItemTemplate>
                      </asp:TemplateField> 
-                     <asp:TemplateField HeaderText="是否首页">
+        <%--             <asp:TemplateField HeaderText="是否首页">
                          <ItemTemplate>
                               <%# Convert.ToInt32(Eval("isindex"))==1?"是":"否" %>
                          </ItemTemplate>
-                     </asp:TemplateField>
+                     </asp:TemplateField>--%>
                      <asp:TemplateField HeaderText="标示图片">
                          <ItemTemplate>
                               <a href="javascript:void(0)" id="ShowPic" src='<%#Eval("picpath") %>' style="color:#333333"><%#(Eval("picpath")==""||Eval("picpath")==DBNull.Value)?"暂无图片":"显示图片" %></a>
@@ -149,9 +174,13 @@
                              <label><%#(Eval("source")==""||Eval("source")==DBNull.Value)?"外部新闻":"本站原创" %></label>
                          </ItemTemplate>
                      </asp:TemplateField>
-                     <asp:BoundField DataField="sort" HeaderText="序号" />                                           
+            <%--         <asp:BoundField DataField="sort" HeaderText="序号" />    --%>                                       
+                     
                      <%--<asp:BoundField DataField="cdate" HeaderText="创建日期" />--%>
                  </Columns>                
+                <EmptyDataTemplate>
+                    <label>无数据</label>
+                </EmptyDataTemplate>
             </asp:GridView>        
         </div>
         <div id="bodyBottom">
